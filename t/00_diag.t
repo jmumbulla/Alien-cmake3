@@ -15,6 +15,7 @@ $modules{$_} = $_ for qw(
   Alien::Build::MM
   Capture::Tiny
   ExtUtils::MakeMaker
+  File::Spec::Functions
   File::Which
   Path::Tiny
   Test2::V0

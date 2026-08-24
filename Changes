@@ -1,6 +1,6 @@
-Revision history for {{$dist->name}}
+Revision history for Alien-cmake3
 
-{{$NEXT}}
+0.10_01   2026-08-24 21:51:18 +0100
   - check cmake version on each load to make sure still 3.x.x
 
 0.10      2025-08-21 03:59:22 -0600
