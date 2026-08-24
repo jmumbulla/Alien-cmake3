@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+  - check cmake version on each load to make sure still 3.x.x
 
 0.10      2025-08-21 03:59:22 -0600
   - Update URL now that 3.x is not on the main download page (gh#23, gh#24)

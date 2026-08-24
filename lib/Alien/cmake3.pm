@@ -4,6 +4,7 @@ use strict;
 use warnings;
 use 5.008001;
 use base qw( Alien::Base );
+use File::Spec::Functions;
 
 # ABSTRACT: Find or download or build cmake 3
 # VERSION
@@ -97,6 +98,17 @@ In the opinion of the maintainer of both L<Alien::cmake3> and L<Alien::CMake> fo
 =back
 
 =cut
+
+my $WANT_VERSION = 3;
+my $cmake = catfile(__PACKAGE__->bin_dir, __PACKAGE__->exe);
+print "cmake = $cmake\n";
+my $out = qx{"$cmake" --version};
+my $cmake_version = $out =~ /cmake version ([0-9\.]+)/
+  ? $1
+  : undef;
+my ($major) = $cmake_version =~ /^([0-9])\./;
+die __PACKAGE__." expected CMake version $WANT_VERSION.x.x but got $cmake_version:\n$out\n"
+  if $major != $WANT_VERSION;
 
 sub exe
 {
