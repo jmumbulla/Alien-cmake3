@@ -1,6 +1,8 @@
 -Revision history for {{$dist->name}}
 
 -{{$NEXT}}
+
+0.11_01   2026-09-04 09:09:17 -0600
   - release functionally identical for 0.10_01
 
 0.10_01   2026-08-24 21:51:18 +0100
