@@ -33,15 +33,11 @@ probe sub {
     if($old_cmake_version)
     {
       my($major) = $old_cmake_version =~ /^([0-9])\./;
-      if($major == 3)
+      if($major >= 3)
       {
         $build->install_prop->{my_old_cmake_use} = 1;
         $build->log("GOOD found cmake version $old_cmake_version");
         return 'system' unless $ENV{ALIEN_CMAKE_FROM_SOURCE};
-      }
-      elsif ($major > 3)
-      {
-        $build->log("TOO NEW found cmake version $old_cmake_version");
       }
       else
       {
